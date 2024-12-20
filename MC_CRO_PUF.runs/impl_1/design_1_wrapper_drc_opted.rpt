@@ -1,0 +1,1749 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1.1 (win64) Build 3900603 Fri Jun 16 19:31:24 MDT 2023
+| Date         : Fri Dec 20 22:54:36 2024
+| Host         : ECIT80703 running 64-bit major release  (build 9200)
+| Command      : report_drc -file design_1_wrapper_drc_opted.rpt -pb design_1_wrapper_drc_opted.pb -rpx design_1_wrapper_drc_opted.rpx
+| Design       : design_1_wrapper
+| Device       : xc7z010clg400-1
+| Speed File   : -1
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 332
++-------------+------------------+-------------------------------------------------------------+------------+
+| Rule        | Severity         | Description                                                 | Violations |
++-------------+------------------+-------------------------------------------------------------+------------+
+| RTSTAT-13   | Critical Warning | Insufficient Routing                                        | 1          |
+| LUTLP-1     | Warning          | Combinatorial Loop Alert                                    | 2          |
+| PDCN-1569   | Warning          | LUT equation term check                                     | 259        |
+| PDRC-153    | Warning          | Gated clock check                                           | 35         |
+| PLHOLDVIO-2 | Warning          | Non-Optimal connections which could lead to hold violations | 35         |
++-------------+------------------+-------------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+RTSTAT-13#1 Critical Warning
+Insufficient Routing  
+A signficant portion of the design is not routed. Routed nets status (RTSTAT-*) DRC checks will not be run.  For routing information, run report_route_status.  Please run implementation on your design.
+Related violations: <none>
+
+LUTLP-1#1 Warning
+Combinatorial Loop Alert  
+130 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. If the loop is known and understood, this DRC can be bypassed by acknowledging the condition and setting the following XDC constraint on any one of the nets in the loop: 'set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets <myHier/myNet>]'. One net in the loop is design_1_i/Test_CRO_0/inst/A0[0]. Please evaluate your design. The cells in the loop are: design_1_i/Test_CRO_0/inst/Enable_A, design_1_i/Test_CRO_0/inst/Enable_B,
+design_1_i/Test_CRO_0/inst/MUX_A1, design_1_i/Test_CRO_0/inst/MUX_A10,
+design_1_i/Test_CRO_0/inst/MUX_A11, design_1_i/Test_CRO_0/inst/MUX_A12,
+design_1_i/Test_CRO_0/inst/MUX_A13, design_1_i/Test_CRO_0/inst/MUX_A2,
+design_1_i/Test_CRO_0/inst/MUX_A3, design_1_i/Test_CRO_0/inst/MUX_A4,
+design_1_i/Test_CRO_0/inst/MUX_A5, design_1_i/Test_CRO_0/inst/MUX_A6,
+design_1_i/Test_CRO_0/inst/MUX_A7, design_1_i/Test_CRO_0/inst/MUX_A8,
+design_1_i/Test_CRO_0/inst/MUX_A9 (the first 15 of 130 listed).
+Related violations: <none>
+
+LUTLP-1#2 Warning
+Combinatorial Loop Alert  
+130 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. If the loop is known and understood, this DRC can be bypassed by acknowledging the condition and setting the following XDC constraint on any one of the nets in the loop: 'set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets <myHier/myNet>]'. One net in the loop is design_1_i/Test_CRO_1/inst/A0[0]. Please evaluate your design. The cells in the loop are: design_1_i/Test_CRO_1/inst/Enable_A, design_1_i/Test_CRO_1/inst/Enable_B,
+design_1_i/Test_CRO_1/inst/MUX_A1, design_1_i/Test_CRO_1/inst/MUX_A10,
+design_1_i/Test_CRO_1/inst/MUX_A11, design_1_i/Test_CRO_1/inst/MUX_A12,
+design_1_i/Test_CRO_1/inst/MUX_A13, design_1_i/Test_CRO_1/inst/MUX_A2,
+design_1_i/Test_CRO_1/inst/MUX_A3, design_1_i/Test_CRO_1/inst/MUX_A4,
+design_1_i/Test_CRO_1/inst/MUX_A5, design_1_i/Test_CRO_1/inst/MUX_A6,
+design_1_i/Test_CRO_1/inst/MUX_A7, design_1_i/Test_CRO_1/inst/MUX_A8,
+design_1_i/Test_CRO_1/inst/MUX_A9 (the first 15 of 130 listed).
+Related violations: <none>
+
+PDCN-1569#1 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/PUF_Controller_0/inst/Set_CE_flag (pin design_1_i/PUF_Controller_0/inst/Set_CE_flag/I0) is not included in the LUT equation: 'O6=(A4*(~A5)*(~A6))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#2 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/PUF_Controller_0/inst/Set_EN_flag (pin design_1_i/PUF_Controller_0/inst/Set_EN_flag/I0) is not included in the LUT equation: 'O6=(A4*A5*(~A6))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#3 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B1 (pin design_1_i/Test_CRO_0/inst/MUX_B1/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#4 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B10 (pin design_1_i/Test_CRO_0/inst/MUX_B10/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#5 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B11 (pin design_1_i/Test_CRO_0/inst/MUX_B11/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#6 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B12 (pin design_1_i/Test_CRO_0/inst/MUX_B12/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#7 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B13 (pin design_1_i/Test_CRO_0/inst/MUX_B13/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#8 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B14 (pin design_1_i/Test_CRO_0/inst/MUX_B14/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#9 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B15 (pin design_1_i/Test_CRO_0/inst/MUX_B15/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#10 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B16 (pin design_1_i/Test_CRO_0/inst/MUX_B16/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#11 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B17 (pin design_1_i/Test_CRO_0/inst/MUX_B17/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#12 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B18 (pin design_1_i/Test_CRO_0/inst/MUX_B18/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#13 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B19 (pin design_1_i/Test_CRO_0/inst/MUX_B19/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#14 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B2 (pin design_1_i/Test_CRO_0/inst/MUX_B2/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#15 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B20 (pin design_1_i/Test_CRO_0/inst/MUX_B20/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#16 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B21 (pin design_1_i/Test_CRO_0/inst/MUX_B21/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#17 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B22 (pin design_1_i/Test_CRO_0/inst/MUX_B22/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#18 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B23 (pin design_1_i/Test_CRO_0/inst/MUX_B23/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#19 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B24 (pin design_1_i/Test_CRO_0/inst/MUX_B24/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#20 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B25 (pin design_1_i/Test_CRO_0/inst/MUX_B25/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#21 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B26 (pin design_1_i/Test_CRO_0/inst/MUX_B26/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#22 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B27 (pin design_1_i/Test_CRO_0/inst/MUX_B27/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#23 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B28 (pin design_1_i/Test_CRO_0/inst/MUX_B28/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#24 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B29 (pin design_1_i/Test_CRO_0/inst/MUX_B29/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#25 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B3 (pin design_1_i/Test_CRO_0/inst/MUX_B3/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#26 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B30 (pin design_1_i/Test_CRO_0/inst/MUX_B30/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#27 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B31 (pin design_1_i/Test_CRO_0/inst/MUX_B31/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#28 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B32 (pin design_1_i/Test_CRO_0/inst/MUX_B32/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#29 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B33 (pin design_1_i/Test_CRO_0/inst/MUX_B33/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#30 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B34 (pin design_1_i/Test_CRO_0/inst/MUX_B34/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#31 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B35 (pin design_1_i/Test_CRO_0/inst/MUX_B35/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#32 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B36 (pin design_1_i/Test_CRO_0/inst/MUX_B36/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#33 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B37 (pin design_1_i/Test_CRO_0/inst/MUX_B37/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#34 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B38 (pin design_1_i/Test_CRO_0/inst/MUX_B38/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#35 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B39 (pin design_1_i/Test_CRO_0/inst/MUX_B39/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#36 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B4 (pin design_1_i/Test_CRO_0/inst/MUX_B4/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#37 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B40 (pin design_1_i/Test_CRO_0/inst/MUX_B40/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#38 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B41 (pin design_1_i/Test_CRO_0/inst/MUX_B41/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#39 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B42 (pin design_1_i/Test_CRO_0/inst/MUX_B42/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#40 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B43 (pin design_1_i/Test_CRO_0/inst/MUX_B43/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#41 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B44 (pin design_1_i/Test_CRO_0/inst/MUX_B44/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#42 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B45 (pin design_1_i/Test_CRO_0/inst/MUX_B45/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#43 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B46 (pin design_1_i/Test_CRO_0/inst/MUX_B46/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#44 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B47 (pin design_1_i/Test_CRO_0/inst/MUX_B47/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#45 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B48 (pin design_1_i/Test_CRO_0/inst/MUX_B48/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#46 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B49 (pin design_1_i/Test_CRO_0/inst/MUX_B49/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#47 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B5 (pin design_1_i/Test_CRO_0/inst/MUX_B5/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#48 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B50 (pin design_1_i/Test_CRO_0/inst/MUX_B50/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#49 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B51 (pin design_1_i/Test_CRO_0/inst/MUX_B51/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#50 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B52 (pin design_1_i/Test_CRO_0/inst/MUX_B52/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#51 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B53 (pin design_1_i/Test_CRO_0/inst/MUX_B53/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#52 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B54 (pin design_1_i/Test_CRO_0/inst/MUX_B54/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#53 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B55 (pin design_1_i/Test_CRO_0/inst/MUX_B55/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#54 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B56 (pin design_1_i/Test_CRO_0/inst/MUX_B56/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#55 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B57 (pin design_1_i/Test_CRO_0/inst/MUX_B57/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#56 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B58 (pin design_1_i/Test_CRO_0/inst/MUX_B58/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#57 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B59 (pin design_1_i/Test_CRO_0/inst/MUX_B59/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#58 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B6 (pin design_1_i/Test_CRO_0/inst/MUX_B6/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#59 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B60 (pin design_1_i/Test_CRO_0/inst/MUX_B60/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#60 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B61 (pin design_1_i/Test_CRO_0/inst/MUX_B61/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#61 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B62 (pin design_1_i/Test_CRO_0/inst/MUX_B62/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#62 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B63 (pin design_1_i/Test_CRO_0/inst/MUX_B63/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#63 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B64 (pin design_1_i/Test_CRO_0/inst/MUX_B64/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#64 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B7 (pin design_1_i/Test_CRO_0/inst/MUX_B7/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#65 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B8 (pin design_1_i/Test_CRO_0/inst/MUX_B8/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#66 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_0/inst/MUX_B9 (pin design_1_i/Test_CRO_0/inst/MUX_B9/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#67 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B1 (pin design_1_i/Test_CRO_1/inst/MUX_B1/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#68 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B10 (pin design_1_i/Test_CRO_1/inst/MUX_B10/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#69 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B11 (pin design_1_i/Test_CRO_1/inst/MUX_B11/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#70 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B12 (pin design_1_i/Test_CRO_1/inst/MUX_B12/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#71 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B13 (pin design_1_i/Test_CRO_1/inst/MUX_B13/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#72 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B14 (pin design_1_i/Test_CRO_1/inst/MUX_B14/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#73 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B15 (pin design_1_i/Test_CRO_1/inst/MUX_B15/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#74 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B16 (pin design_1_i/Test_CRO_1/inst/MUX_B16/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#75 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B17 (pin design_1_i/Test_CRO_1/inst/MUX_B17/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#76 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B18 (pin design_1_i/Test_CRO_1/inst/MUX_B18/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#77 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B19 (pin design_1_i/Test_CRO_1/inst/MUX_B19/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#78 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B2 (pin design_1_i/Test_CRO_1/inst/MUX_B2/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#79 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B20 (pin design_1_i/Test_CRO_1/inst/MUX_B20/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#80 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B21 (pin design_1_i/Test_CRO_1/inst/MUX_B21/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#81 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B22 (pin design_1_i/Test_CRO_1/inst/MUX_B22/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#82 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B23 (pin design_1_i/Test_CRO_1/inst/MUX_B23/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#83 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B24 (pin design_1_i/Test_CRO_1/inst/MUX_B24/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#84 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B25 (pin design_1_i/Test_CRO_1/inst/MUX_B25/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#85 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B26 (pin design_1_i/Test_CRO_1/inst/MUX_B26/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#86 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B27 (pin design_1_i/Test_CRO_1/inst/MUX_B27/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#87 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B28 (pin design_1_i/Test_CRO_1/inst/MUX_B28/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#88 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B29 (pin design_1_i/Test_CRO_1/inst/MUX_B29/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#89 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B3 (pin design_1_i/Test_CRO_1/inst/MUX_B3/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#90 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B30 (pin design_1_i/Test_CRO_1/inst/MUX_B30/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#91 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B31 (pin design_1_i/Test_CRO_1/inst/MUX_B31/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#92 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B32 (pin design_1_i/Test_CRO_1/inst/MUX_B32/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#93 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B33 (pin design_1_i/Test_CRO_1/inst/MUX_B33/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#94 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B34 (pin design_1_i/Test_CRO_1/inst/MUX_B34/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#95 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B35 (pin design_1_i/Test_CRO_1/inst/MUX_B35/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#96 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B36 (pin design_1_i/Test_CRO_1/inst/MUX_B36/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#97 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B37 (pin design_1_i/Test_CRO_1/inst/MUX_B37/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#98 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B38 (pin design_1_i/Test_CRO_1/inst/MUX_B38/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#99 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B39 (pin design_1_i/Test_CRO_1/inst/MUX_B39/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#100 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B4 (pin design_1_i/Test_CRO_1/inst/MUX_B4/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#101 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B40 (pin design_1_i/Test_CRO_1/inst/MUX_B40/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#102 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B41 (pin design_1_i/Test_CRO_1/inst/MUX_B41/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#103 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B42 (pin design_1_i/Test_CRO_1/inst/MUX_B42/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#104 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B43 (pin design_1_i/Test_CRO_1/inst/MUX_B43/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#105 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B44 (pin design_1_i/Test_CRO_1/inst/MUX_B44/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#106 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B45 (pin design_1_i/Test_CRO_1/inst/MUX_B45/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#107 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B46 (pin design_1_i/Test_CRO_1/inst/MUX_B46/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#108 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B47 (pin design_1_i/Test_CRO_1/inst/MUX_B47/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#109 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B48 (pin design_1_i/Test_CRO_1/inst/MUX_B48/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#110 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B49 (pin design_1_i/Test_CRO_1/inst/MUX_B49/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#111 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B5 (pin design_1_i/Test_CRO_1/inst/MUX_B5/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#112 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B50 (pin design_1_i/Test_CRO_1/inst/MUX_B50/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#113 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B51 (pin design_1_i/Test_CRO_1/inst/MUX_B51/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#114 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B52 (pin design_1_i/Test_CRO_1/inst/MUX_B52/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#115 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B53 (pin design_1_i/Test_CRO_1/inst/MUX_B53/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#116 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B54 (pin design_1_i/Test_CRO_1/inst/MUX_B54/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#117 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B55 (pin design_1_i/Test_CRO_1/inst/MUX_B55/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#118 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B56 (pin design_1_i/Test_CRO_1/inst/MUX_B56/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#119 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B57 (pin design_1_i/Test_CRO_1/inst/MUX_B57/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#120 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B58 (pin design_1_i/Test_CRO_1/inst/MUX_B58/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#121 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B59 (pin design_1_i/Test_CRO_1/inst/MUX_B59/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#122 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B6 (pin design_1_i/Test_CRO_1/inst/MUX_B6/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#123 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B60 (pin design_1_i/Test_CRO_1/inst/MUX_B60/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#124 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B61 (pin design_1_i/Test_CRO_1/inst/MUX_B61/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#125 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B62 (pin design_1_i/Test_CRO_1/inst/MUX_B62/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#126 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B63 (pin design_1_i/Test_CRO_1/inst/MUX_B63/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#127 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B64 (pin design_1_i/Test_CRO_1/inst/MUX_B64/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#128 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B7 (pin design_1_i/Test_CRO_1/inst/MUX_B7/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#129 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B8 (pin design_1_i/Test_CRO_1/inst/MUX_B8/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#130 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell design_1_i/Test_CRO_1/inst/MUX_B9 (pin design_1_i/Test_CRO_1/inst/MUX_B9/I3) is not included in the LUT equation: 'O6=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#131 Warning
+LUT equation term check  
+Used physical LUT pin 'A5' of cell design_1_i/PUF_Controller_0/inst/Enable_0 (pin design_1_i/PUF_Controller_0/inst/Enable_0/I2) is not included in the LUT equation: 'O6=(A3*(~A4)*A6)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#132 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A1 (pin design_1_i/Test_CRO_0/inst/MUX_A1/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#133 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A10 (pin design_1_i/Test_CRO_0/inst/MUX_A10/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#134 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A11 (pin design_1_i/Test_CRO_0/inst/MUX_A11/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#135 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A12 (pin design_1_i/Test_CRO_0/inst/MUX_A12/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#136 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A13 (pin design_1_i/Test_CRO_0/inst/MUX_A13/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#137 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A14 (pin design_1_i/Test_CRO_0/inst/MUX_A14/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#138 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A15 (pin design_1_i/Test_CRO_0/inst/MUX_A15/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#139 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A16 (pin design_1_i/Test_CRO_0/inst/MUX_A16/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#140 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A17 (pin design_1_i/Test_CRO_0/inst/MUX_A17/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#141 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A18 (pin design_1_i/Test_CRO_0/inst/MUX_A18/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#142 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A19 (pin design_1_i/Test_CRO_0/inst/MUX_A19/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#143 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A2 (pin design_1_i/Test_CRO_0/inst/MUX_A2/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#144 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A20 (pin design_1_i/Test_CRO_0/inst/MUX_A20/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#145 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A21 (pin design_1_i/Test_CRO_0/inst/MUX_A21/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#146 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A22 (pin design_1_i/Test_CRO_0/inst/MUX_A22/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#147 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A23 (pin design_1_i/Test_CRO_0/inst/MUX_A23/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#148 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A24 (pin design_1_i/Test_CRO_0/inst/MUX_A24/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#149 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A25 (pin design_1_i/Test_CRO_0/inst/MUX_A25/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#150 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A26 (pin design_1_i/Test_CRO_0/inst/MUX_A26/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#151 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A27 (pin design_1_i/Test_CRO_0/inst/MUX_A27/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#152 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A28 (pin design_1_i/Test_CRO_0/inst/MUX_A28/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#153 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A29 (pin design_1_i/Test_CRO_0/inst/MUX_A29/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#154 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A3 (pin design_1_i/Test_CRO_0/inst/MUX_A3/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#155 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A30 (pin design_1_i/Test_CRO_0/inst/MUX_A30/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#156 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A31 (pin design_1_i/Test_CRO_0/inst/MUX_A31/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#157 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A32 (pin design_1_i/Test_CRO_0/inst/MUX_A32/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#158 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A33 (pin design_1_i/Test_CRO_0/inst/MUX_A33/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#159 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A34 (pin design_1_i/Test_CRO_0/inst/MUX_A34/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#160 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A35 (pin design_1_i/Test_CRO_0/inst/MUX_A35/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#161 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A36 (pin design_1_i/Test_CRO_0/inst/MUX_A36/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#162 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A37 (pin design_1_i/Test_CRO_0/inst/MUX_A37/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#163 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A38 (pin design_1_i/Test_CRO_0/inst/MUX_A38/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#164 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A39 (pin design_1_i/Test_CRO_0/inst/MUX_A39/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#165 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A4 (pin design_1_i/Test_CRO_0/inst/MUX_A4/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#166 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A40 (pin design_1_i/Test_CRO_0/inst/MUX_A40/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#167 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A41 (pin design_1_i/Test_CRO_0/inst/MUX_A41/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#168 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A42 (pin design_1_i/Test_CRO_0/inst/MUX_A42/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#169 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A43 (pin design_1_i/Test_CRO_0/inst/MUX_A43/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#170 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A44 (pin design_1_i/Test_CRO_0/inst/MUX_A44/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#171 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A45 (pin design_1_i/Test_CRO_0/inst/MUX_A45/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#172 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A46 (pin design_1_i/Test_CRO_0/inst/MUX_A46/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#173 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A47 (pin design_1_i/Test_CRO_0/inst/MUX_A47/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#174 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A48 (pin design_1_i/Test_CRO_0/inst/MUX_A48/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#175 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A49 (pin design_1_i/Test_CRO_0/inst/MUX_A49/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#176 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A5 (pin design_1_i/Test_CRO_0/inst/MUX_A5/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#177 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A50 (pin design_1_i/Test_CRO_0/inst/MUX_A50/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#178 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A51 (pin design_1_i/Test_CRO_0/inst/MUX_A51/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#179 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A52 (pin design_1_i/Test_CRO_0/inst/MUX_A52/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#180 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A53 (pin design_1_i/Test_CRO_0/inst/MUX_A53/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#181 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A54 (pin design_1_i/Test_CRO_0/inst/MUX_A54/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#182 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A55 (pin design_1_i/Test_CRO_0/inst/MUX_A55/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#183 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A56 (pin design_1_i/Test_CRO_0/inst/MUX_A56/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#184 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A57 (pin design_1_i/Test_CRO_0/inst/MUX_A57/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#185 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A58 (pin design_1_i/Test_CRO_0/inst/MUX_A58/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#186 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A59 (pin design_1_i/Test_CRO_0/inst/MUX_A59/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#187 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A6 (pin design_1_i/Test_CRO_0/inst/MUX_A6/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#188 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A60 (pin design_1_i/Test_CRO_0/inst/MUX_A60/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#189 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A61 (pin design_1_i/Test_CRO_0/inst/MUX_A61/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#190 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A62 (pin design_1_i/Test_CRO_0/inst/MUX_A62/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#191 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A63 (pin design_1_i/Test_CRO_0/inst/MUX_A63/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#192 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A64 (pin design_1_i/Test_CRO_0/inst/MUX_A64/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#193 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A7 (pin design_1_i/Test_CRO_0/inst/MUX_A7/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#194 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A8 (pin design_1_i/Test_CRO_0/inst/MUX_A8/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#195 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_0/inst/MUX_A9 (pin design_1_i/Test_CRO_0/inst/MUX_A9/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#196 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A1 (pin design_1_i/Test_CRO_1/inst/MUX_A1/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#197 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A10 (pin design_1_i/Test_CRO_1/inst/MUX_A10/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#198 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A11 (pin design_1_i/Test_CRO_1/inst/MUX_A11/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#199 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A12 (pin design_1_i/Test_CRO_1/inst/MUX_A12/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#200 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A13 (pin design_1_i/Test_CRO_1/inst/MUX_A13/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#201 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A14 (pin design_1_i/Test_CRO_1/inst/MUX_A14/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#202 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A15 (pin design_1_i/Test_CRO_1/inst/MUX_A15/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#203 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A16 (pin design_1_i/Test_CRO_1/inst/MUX_A16/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#204 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A17 (pin design_1_i/Test_CRO_1/inst/MUX_A17/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#205 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A18 (pin design_1_i/Test_CRO_1/inst/MUX_A18/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#206 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A19 (pin design_1_i/Test_CRO_1/inst/MUX_A19/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#207 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A2 (pin design_1_i/Test_CRO_1/inst/MUX_A2/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#208 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A20 (pin design_1_i/Test_CRO_1/inst/MUX_A20/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#209 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A21 (pin design_1_i/Test_CRO_1/inst/MUX_A21/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#210 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A22 (pin design_1_i/Test_CRO_1/inst/MUX_A22/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#211 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A23 (pin design_1_i/Test_CRO_1/inst/MUX_A23/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#212 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A24 (pin design_1_i/Test_CRO_1/inst/MUX_A24/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#213 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A25 (pin design_1_i/Test_CRO_1/inst/MUX_A25/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#214 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A26 (pin design_1_i/Test_CRO_1/inst/MUX_A26/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#215 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A27 (pin design_1_i/Test_CRO_1/inst/MUX_A27/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#216 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A28 (pin design_1_i/Test_CRO_1/inst/MUX_A28/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#217 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A29 (pin design_1_i/Test_CRO_1/inst/MUX_A29/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#218 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A3 (pin design_1_i/Test_CRO_1/inst/MUX_A3/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#219 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A30 (pin design_1_i/Test_CRO_1/inst/MUX_A30/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#220 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A31 (pin design_1_i/Test_CRO_1/inst/MUX_A31/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#221 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A32 (pin design_1_i/Test_CRO_1/inst/MUX_A32/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#222 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A33 (pin design_1_i/Test_CRO_1/inst/MUX_A33/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#223 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A34 (pin design_1_i/Test_CRO_1/inst/MUX_A34/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#224 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A35 (pin design_1_i/Test_CRO_1/inst/MUX_A35/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#225 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A36 (pin design_1_i/Test_CRO_1/inst/MUX_A36/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#226 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A37 (pin design_1_i/Test_CRO_1/inst/MUX_A37/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#227 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A38 (pin design_1_i/Test_CRO_1/inst/MUX_A38/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#228 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A39 (pin design_1_i/Test_CRO_1/inst/MUX_A39/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#229 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A4 (pin design_1_i/Test_CRO_1/inst/MUX_A4/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#230 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A40 (pin design_1_i/Test_CRO_1/inst/MUX_A40/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#231 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A41 (pin design_1_i/Test_CRO_1/inst/MUX_A41/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#232 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A42 (pin design_1_i/Test_CRO_1/inst/MUX_A42/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#233 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A43 (pin design_1_i/Test_CRO_1/inst/MUX_A43/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#234 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A44 (pin design_1_i/Test_CRO_1/inst/MUX_A44/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#235 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A45 (pin design_1_i/Test_CRO_1/inst/MUX_A45/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#236 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A46 (pin design_1_i/Test_CRO_1/inst/MUX_A46/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#237 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A47 (pin design_1_i/Test_CRO_1/inst/MUX_A47/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#238 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A48 (pin design_1_i/Test_CRO_1/inst/MUX_A48/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#239 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A49 (pin design_1_i/Test_CRO_1/inst/MUX_A49/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#240 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A5 (pin design_1_i/Test_CRO_1/inst/MUX_A5/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#241 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A50 (pin design_1_i/Test_CRO_1/inst/MUX_A50/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#242 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A51 (pin design_1_i/Test_CRO_1/inst/MUX_A51/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#243 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A52 (pin design_1_i/Test_CRO_1/inst/MUX_A52/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#244 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A53 (pin design_1_i/Test_CRO_1/inst/MUX_A53/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#245 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A54 (pin design_1_i/Test_CRO_1/inst/MUX_A54/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#246 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A55 (pin design_1_i/Test_CRO_1/inst/MUX_A55/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#247 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A56 (pin design_1_i/Test_CRO_1/inst/MUX_A56/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#248 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A57 (pin design_1_i/Test_CRO_1/inst/MUX_A57/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#249 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A58 (pin design_1_i/Test_CRO_1/inst/MUX_A58/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#250 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A59 (pin design_1_i/Test_CRO_1/inst/MUX_A59/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#251 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A6 (pin design_1_i/Test_CRO_1/inst/MUX_A6/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#252 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A60 (pin design_1_i/Test_CRO_1/inst/MUX_A60/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#253 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A61 (pin design_1_i/Test_CRO_1/inst/MUX_A61/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#254 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A62 (pin design_1_i/Test_CRO_1/inst/MUX_A62/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#255 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A63 (pin design_1_i/Test_CRO_1/inst/MUX_A63/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#256 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A64 (pin design_1_i/Test_CRO_1/inst/MUX_A64/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#257 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A7 (pin design_1_i/Test_CRO_1/inst/MUX_A7/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#258 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A8 (pin design_1_i/Test_CRO_1/inst/MUX_A8/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#259 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell design_1_i/Test_CRO_1/inst/MUX_A9 (pin design_1_i/Test_CRO_1/inst/MUX_A9/I3) is not included in the LUT equation: 'O6=(A2*A1)+(A2*(~A1)*(~A5))+((~A2)*A1*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDRC-153#1 Warning
+Gated clock check  
+Net design_1_i/PUF_Controller_0/inst/Cycle_counter_bit_0_1 is a gated clock net sourced by a combinational pin design_1_i/PUF_Controller_0/inst/FF_cycle_counter_0_inver/O, cell design_1_i/PUF_Controller_0/inst/FF_cycle_counter_0_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net design_1_i/PUF_Controller_0/inst/Cycle_finish_flag is a gated clock net sourced by a combinational pin design_1_i/PUF_Controller_0/inst/Cycle_finish/O, cell design_1_i/PUF_Controller_0/inst/Cycle_finish. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#3 Warning
+Gated clock check  
+Net design_1_i/PUF_Controller_0/inst/Q_0_1 is a gated clock net sourced by a combinational pin design_1_i/PUF_Controller_0/inst/FF_0_inver/O, cell design_1_i/PUF_Controller_0/inst/FF_0_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#4 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_0/inst/Q_0_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_0/inst/FF_0_inver/O, cell design_1_i/Test_CRO_0/inst/FF_0_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#5 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_0/inst/Q_10_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_0/inst/FF_10_inver/O, cell design_1_i/Test_CRO_0/inst/FF_10_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#6 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_0/inst/Q_11_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_0/inst/FF_11_inver/O, cell design_1_i/Test_CRO_0/inst/FF_11_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#7 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_0/inst/Q_12_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_0/inst/FF_12_inver/O, cell design_1_i/Test_CRO_0/inst/FF_12_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#8 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_0/inst/Q_13_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_0/inst/FF_13_inver/O, cell design_1_i/Test_CRO_0/inst/FF_13_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#9 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_0/inst/Q_14_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_0/inst/FF_14_inver/O, cell design_1_i/Test_CRO_0/inst/FF_14_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#10 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_0/inst/Q_1_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_0/inst/FF_1_inver/O, cell design_1_i/Test_CRO_0/inst/FF_1_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#11 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_0/inst/Q_2_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_0/inst/FF_2_inver/O, cell design_1_i/Test_CRO_0/inst/FF_2_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#12 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_0/inst/Q_3_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_0/inst/FF_3_inver/O, cell design_1_i/Test_CRO_0/inst/FF_3_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#13 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_0/inst/Q_4_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_0/inst/FF_4_inver/O, cell design_1_i/Test_CRO_0/inst/FF_4_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#14 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_0/inst/Q_5_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_0/inst/FF_5_inver/O, cell design_1_i/Test_CRO_0/inst/FF_5_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#15 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_0/inst/Q_6_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_0/inst/FF_6_inver/O, cell design_1_i/Test_CRO_0/inst/FF_6_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#16 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_0/inst/Q_7_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_0/inst/FF_7_inver/O, cell design_1_i/Test_CRO_0/inst/FF_7_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#17 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_0/inst/Q_8_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_0/inst/FF_8_inver/O, cell design_1_i/Test_CRO_0/inst/FF_8_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#18 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_0/inst/Q_9_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_0/inst/FF_9_inver/O, cell design_1_i/Test_CRO_0/inst/FF_9_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#19 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_0/inst/to_counter is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_0/inst/Delay_line_MUX/O, cell design_1_i/Test_CRO_0/inst/Delay_line_MUX. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#20 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_1/inst/Q_0_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_1/inst/FF_0_inver/O, cell design_1_i/Test_CRO_1/inst/FF_0_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#21 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_1/inst/Q_10_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_1/inst/FF_10_inver/O, cell design_1_i/Test_CRO_1/inst/FF_10_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#22 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_1/inst/Q_11_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_1/inst/FF_11_inver/O, cell design_1_i/Test_CRO_1/inst/FF_11_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#23 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_1/inst/Q_12_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_1/inst/FF_12_inver/O, cell design_1_i/Test_CRO_1/inst/FF_12_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#24 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_1/inst/Q_13_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_1/inst/FF_13_inver/O, cell design_1_i/Test_CRO_1/inst/FF_13_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#25 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_1/inst/Q_14_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_1/inst/FF_14_inver/O, cell design_1_i/Test_CRO_1/inst/FF_14_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#26 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_1/inst/Q_1_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_1/inst/FF_1_inver/O, cell design_1_i/Test_CRO_1/inst/FF_1_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#27 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_1/inst/Q_2_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_1/inst/FF_2_inver/O, cell design_1_i/Test_CRO_1/inst/FF_2_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#28 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_1/inst/Q_3_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_1/inst/FF_3_inver/O, cell design_1_i/Test_CRO_1/inst/FF_3_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#29 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_1/inst/Q_4_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_1/inst/FF_4_inver/O, cell design_1_i/Test_CRO_1/inst/FF_4_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#30 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_1/inst/Q_5_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_1/inst/FF_5_inver/O, cell design_1_i/Test_CRO_1/inst/FF_5_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#31 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_1/inst/Q_6_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_1/inst/FF_6_inver/O, cell design_1_i/Test_CRO_1/inst/FF_6_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#32 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_1/inst/Q_7_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_1/inst/FF_7_inver/O, cell design_1_i/Test_CRO_1/inst/FF_7_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#33 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_1/inst/Q_8_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_1/inst/FF_8_inver/O, cell design_1_i/Test_CRO_1/inst/FF_8_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#34 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_1/inst/Q_9_1 is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_1/inst/FF_9_inver/O, cell design_1_i/Test_CRO_1/inst/FF_9_inver. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#35 Warning
+Gated clock check  
+Net design_1_i/Test_CRO_1/inst/to_counter is a gated clock net sourced by a combinational pin design_1_i/Test_CRO_1/inst/Delay_line_MUX/O, cell design_1_i/Test_CRO_1/inst/Delay_line_MUX. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PLHOLDVIO-2#1 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/PUF_Controller_0/inst/Cycle_finish is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/PUF_Controller_0/inst/FF_cycle_counter_0
+Related violations: <none>
+
+PLHOLDVIO-2#2 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/PUF_Controller_0/inst/FF_0_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/PUF_Controller_0/inst/DFF_1
+Related violations: <none>
+
+PLHOLDVIO-2#3 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/PUF_Controller_0/inst/FF_cycle_counter_0_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/PUF_Controller_0/inst/FF_cycle_counter_1
+Related violations: <none>
+
+PLHOLDVIO-2#4 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_0/inst/Delay_line_MUX is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_0/inst/DFF_0
+Related violations: <none>
+
+PLHOLDVIO-2#5 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_0/inst/FF_0_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_0/inst/DFF_1
+Related violations: <none>
+
+PLHOLDVIO-2#6 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_0/inst/FF_10_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_0/inst/DFF_11
+Related violations: <none>
+
+PLHOLDVIO-2#7 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_0/inst/FF_11_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_0/inst/DFF_12
+Related violations: <none>
+
+PLHOLDVIO-2#8 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_0/inst/FF_12_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_0/inst/DFF_13
+Related violations: <none>
+
+PLHOLDVIO-2#9 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_0/inst/FF_13_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_0/inst/DFF_14
+Related violations: <none>
+
+PLHOLDVIO-2#10 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_0/inst/FF_14_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_0/inst/DFF_15
+Related violations: <none>
+
+PLHOLDVIO-2#11 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_0/inst/FF_1_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_0/inst/DFF_2
+Related violations: <none>
+
+PLHOLDVIO-2#12 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_0/inst/FF_2_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_0/inst/DFF_3
+Related violations: <none>
+
+PLHOLDVIO-2#13 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_0/inst/FF_3_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_0/inst/DFF_4
+Related violations: <none>
+
+PLHOLDVIO-2#14 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_0/inst/FF_4_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_0/inst/DFF_5
+Related violations: <none>
+
+PLHOLDVIO-2#15 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_0/inst/FF_5_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_0/inst/DFF_6
+Related violations: <none>
+
+PLHOLDVIO-2#16 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_0/inst/FF_6_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_0/inst/DFF_7
+Related violations: <none>
+
+PLHOLDVIO-2#17 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_0/inst/FF_7_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_0/inst/DFF_8
+Related violations: <none>
+
+PLHOLDVIO-2#18 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_0/inst/FF_8_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_0/inst/DFF_9
+Related violations: <none>
+
+PLHOLDVIO-2#19 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_0/inst/FF_9_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_0/inst/DFF_10
+Related violations: <none>
+
+PLHOLDVIO-2#20 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_1/inst/Delay_line_MUX is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_1/inst/DFF_0
+Related violations: <none>
+
+PLHOLDVIO-2#21 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_1/inst/FF_0_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_1/inst/DFF_1
+Related violations: <none>
+
+PLHOLDVIO-2#22 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_1/inst/FF_10_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_1/inst/DFF_11
+Related violations: <none>
+
+PLHOLDVIO-2#23 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_1/inst/FF_11_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_1/inst/DFF_12
+Related violations: <none>
+
+PLHOLDVIO-2#24 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_1/inst/FF_12_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_1/inst/DFF_13
+Related violations: <none>
+
+PLHOLDVIO-2#25 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_1/inst/FF_13_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_1/inst/DFF_14
+Related violations: <none>
+
+PLHOLDVIO-2#26 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_1/inst/FF_14_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_1/inst/DFF_15
+Related violations: <none>
+
+PLHOLDVIO-2#27 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_1/inst/FF_1_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_1/inst/DFF_2
+Related violations: <none>
+
+PLHOLDVIO-2#28 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_1/inst/FF_2_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_1/inst/DFF_3
+Related violations: <none>
+
+PLHOLDVIO-2#29 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_1/inst/FF_3_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_1/inst/DFF_4
+Related violations: <none>
+
+PLHOLDVIO-2#30 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_1/inst/FF_4_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_1/inst/DFF_5
+Related violations: <none>
+
+PLHOLDVIO-2#31 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_1/inst/FF_5_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_1/inst/DFF_6
+Related violations: <none>
+
+PLHOLDVIO-2#32 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_1/inst/FF_6_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_1/inst/DFF_7
+Related violations: <none>
+
+PLHOLDVIO-2#33 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_1/inst/FF_7_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_1/inst/DFF_8
+Related violations: <none>
+
+PLHOLDVIO-2#34 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_1/inst/FF_8_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_1/inst/DFF_9
+Related violations: <none>
+
+PLHOLDVIO-2#35 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT design_1_i/Test_CRO_1/inst/FF_9_inver is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/Test_CRO_1/inst/DFF_10
+Related violations: <none>
+
+

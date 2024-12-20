@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.1.1 (64-bit)
+# SW Build 3900603 on Fri Jun 16 19:31:24 MDT 2023
+# IP Build 3900379 on Sat Jun 17 05:28:05 MDT 2023
+# SharedData Build 3899622 on Fri Jun 16 03:34:24 MDT 2023
+# Start of session at: Fri Dec 20 22:44:00 2024
+# Process ID: 30324
+# Current directory: C:/Users/40227910/Desktop/16_bit_puf_new_balancing/16_bit_puf_new_balancing.runs/design_1_Counter_latch_0_0_synth_1
+# Command line: vivado.exe -log design_1_Counter_latch_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_Counter_latch_0_0.tcl
+# Log file: C:/Users/40227910/Desktop/16_bit_puf_new_balancing/16_bit_puf_new_balancing.runs/design_1_Counter_latch_0_0_synth_1/design_1_Counter_latch_0_0.vds
+# Journal file: C:/Users/40227910/Desktop/16_bit_puf_new_balancing/16_bit_puf_new_balancing.runs/design_1_Counter_latch_0_0_synth_1\vivado.jou
+# Running On: ECIT80703, OS: Windows, CPU Frequency: 2918 MHz, CPU Physical cores: 14, Host memory: 33995 MB
+#-----------------------------------------------------------
+source design_1_Counter_latch_0_0.tcl -notrace

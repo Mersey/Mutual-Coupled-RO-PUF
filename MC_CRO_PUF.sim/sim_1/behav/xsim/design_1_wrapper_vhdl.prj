@@ -1,0 +1,20 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../16_bit_puf_new_balancing.ip_user_files/bd/design_1/ip/design_1_axi_gpio_0_0/sim/design_1_axi_gpio_0_0.vhd" \
+"../../../../16_bit_puf_new_balancing.ip_user_files/bd/design_1/ip/design_1_axi_gpio_1_0/sim/design_1_axi_gpio_1_0.vhd" \
+"../../../../16_bit_puf_new_balancing.ip_user_files/bd/design_1/ip/design_1_axi_gpio_3_0/sim/design_1_axi_gpio_3_0.vhd" \
+"../../../../16_bit_puf_new_balancing.ip_user_files/bd/design_1/ip/design_1_rst_ps7_0_100M_0/sim/design_1_rst_ps7_0_100M_0.vhd" \
+"../../../../16_bit_puf_new_balancing.ip_user_files/bd/design_1/ip/design_1_axi_gpio_5_0/sim/design_1_axi_gpio_5_0.vhd" \
+"../../../../16_bit_puf_new_balancing.ip_user_files/bd/design_1/ip/design_1_axi_gpio_6_0/sim/design_1_axi_gpio_6_0.vhd" \
+"../../../../16_bit_puf_new_balancing.ip_user_files/bd/design_1/ip/design_1_axi_gpio_7_0/sim/design_1_axi_gpio_7_0.vhd" \
+"../../../../16_bit_puf_new_balancing.ip_user_files/bd/design_1/ip/design_1_axi_gpio_7_1/sim/design_1_axi_gpio_7_1.vhd" \
+"../../../../16_bit_puf_new_balancing.ip_user_files/bd/design_1/ip/design_1_axi_gpio_4_0/sim/design_1_axi_gpio_4_0.vhd" \
+"../../../../16_bit_puf_new_balancing.ip_user_files/bd/design_1/ip/design_1_axi_gpio_9_1/sim/design_1_axi_gpio_9_1.vhd" \
+"../../../../16_bit_puf_new_balancing.ip_user_files/bd/design_1/ip/design_1_axi_gpio_8_0/sim/design_1_axi_gpio_8_0.vhd" \
+"../../../../16_bit_puf_new_balancing.ip_user_files/bd/design_1/ip/design_1_axi_gpio_4_1/sim/design_1_axi_gpio_4_1.vhd" \
+"../../../../16_bit_puf_new_balancing.ip_user_files/bd/design_1/ip/design_1_axi_gpio_2_0/sim/design_1_axi_gpio_2_0.vhd" \
+"../../../../16_bit_puf_new_balancing.ip_user_files/bd/design_1/ip/design_1_axi_gpio_3_1/sim/design_1_axi_gpio_3_1.vhd" \
+"../../../../16_bit_puf_new_balancing.ip_user_files/bd/design_1/ip/design_1_axi_gpio_0_1/sim/design_1_axi_gpio_0_1.vhd" \
+
+# Do not sort compile order
+nosort

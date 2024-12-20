@@ -1,0 +1,255 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Wed Jun 26 16:12:17 2024
+# Process ID: 38560
+# Current directory: C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.runs/design_1_Test_CRO_0_0_synth_1
+# Command line: vivado.exe -log design_1_Test_CRO_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_Test_CRO_0_0.tcl
+# Log file: C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.runs/design_1_Test_CRO_0_0_synth_1/design_1_Test_CRO_0_0.vds
+# Journal file: C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.runs/design_1_Test_CRO_0_0_synth_1\vivado.jou
+# Running On: ECIT80703, OS: Windows, CPU Frequency: 2918 MHz, CPU Physical cores: 14, Host memory: 33995 MB
+#-----------------------------------------------------------
+source design_1_Test_CRO_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:13 . Memory (MB): peak = 1503.047 ; gain = 197.586
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.1/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_Test_CRO_0_0
+Command: synth_design -top design_1_Test_CRO_0_0 -part xc7z010clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 26344
+INFO: [Synth 8-11241] undeclared symbol 'EN_0', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:110]
+INFO: [Synth 8-11241] undeclared symbol 'EN_1', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:111]
+INFO: [Synth 8-11241] undeclared symbol 'to_counter', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1707]
+INFO: [Synth 8-11241] undeclared symbol 'Q_0', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1722]
+INFO: [Synth 8-11241] undeclared symbol 'Q_0_1', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1726]
+INFO: [Synth 8-11241] undeclared symbol 'Q_1', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1741]
+INFO: [Synth 8-11241] undeclared symbol 'Q_1_1', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1745]
+INFO: [Synth 8-11241] undeclared symbol 'Q_2', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1760]
+INFO: [Synth 8-11241] undeclared symbol 'Q_2_1', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1764]
+INFO: [Synth 8-11241] undeclared symbol 'Q_3', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1779]
+INFO: [Synth 8-11241] undeclared symbol 'Q_3_1', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1783]
+INFO: [Synth 8-11241] undeclared symbol 'Q_4', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1798]
+INFO: [Synth 8-11241] undeclared symbol 'Q_4_1', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1802]
+INFO: [Synth 8-11241] undeclared symbol 'Q_5', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1817]
+INFO: [Synth 8-11241] undeclared symbol 'Q_5_1', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1821]
+INFO: [Synth 8-11241] undeclared symbol 'Q_6', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1836]
+INFO: [Synth 8-11241] undeclared symbol 'Q_6_1', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1840]
+INFO: [Synth 8-11241] undeclared symbol 'Q_7', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1855]
+INFO: [Synth 8-11241] undeclared symbol 'Q_7_1', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1859]
+INFO: [Synth 8-11241] undeclared symbol 'Q_8', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1874]
+INFO: [Synth 8-11241] undeclared symbol 'Q_8_1', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1878]
+INFO: [Synth 8-11241] undeclared symbol 'Q_9', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1893]
+INFO: [Synth 8-11241] undeclared symbol 'Q_9_1', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1897]
+INFO: [Synth 8-11241] undeclared symbol 'Q_10', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1912]
+INFO: [Synth 8-11241] undeclared symbol 'Q_10_1', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1916]
+INFO: [Synth 8-11241] undeclared symbol 'Q_11', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1931]
+INFO: [Synth 8-11241] undeclared symbol 'Q_11_1', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1935]
+INFO: [Synth 8-11241] undeclared symbol 'Q_12', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1950]
+INFO: [Synth 8-11241] undeclared symbol 'Q_12_1', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1954]
+INFO: [Synth 8-11241] undeclared symbol 'Q_13', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1969]
+INFO: [Synth 8-11241] undeclared symbol 'Q_13_1', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1973]
+INFO: [Synth 8-11241] undeclared symbol 'Q_14', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1988]
+INFO: [Synth 8-11241] undeclared symbol 'Q_14_1', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:1992]
+INFO: [Synth 8-11241] undeclared symbol 'Q_15', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:2007]
+INFO: [Synth 8-11241] undeclared symbol 'Q_15_1', assumed default net type 'wire' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:2011]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 2327.910 ; gain = 409.352
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_Test_CRO_0_0' [c:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.gen/sources_1/bd/design_1/ip/design_1_Test_CRO_0_0/synth/design_1_Test_CRO_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'Test_CRO' [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:22]
+INFO: [Synth 8-6157] synthesizing module 'LUT5' [C:/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:79590]
+INFO: [Synth 8-6155] done synthesizing module 'LUT5' (0#1) [C:/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:79590]
+INFO: [Synth 8-6157] synthesizing module 'LUT4' [C:/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:79544]
+INFO: [Synth 8-6155] done synthesizing module 'LUT4' (0#1) [C:/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:79544]
+INFO: [Synth 8-6157] synthesizing module 'LUT4__parameterized0' [C:/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:79544]
+INFO: [Synth 8-6155] done synthesizing module 'LUT4__parameterized0' (0#1) [C:/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:79544]
+INFO: [Synth 8-6157] synthesizing module 'FDCE' [C:/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:38932]
+INFO: [Synth 8-6155] done synthesizing module 'FDCE' (0#1) [C:/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:38932]
+INFO: [Synth 8-6157] synthesizing module 'LUT1' [C:/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:79430]
+INFO: [Synth 8-6155] done synthesizing module 'LUT1' (0#1) [C:/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:79430]
+INFO: [Synth 8-6155] done synthesizing module 'Test_CRO' (0#1) [C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.srcs/sources_1/new/Test_delay_lines.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_Test_CRO_0_0' (0#1) [c:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.gen/sources_1/bd/design_1/ip/design_1_Test_CRO_0_0/synth/design_1_Test_CRO_0_0.v:53]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 2423.848 ; gain = 505.289
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 2441.770 ; gain = 523.211
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 2441.770 ; gain = 523.211
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2453.828 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2554.430 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 2554.430 ; gain = 0.000
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 2554.430 ; gain = 635.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 2554.430 ; gain = 635.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 2554.430 ; gain = 635.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 2554.430 ; gain = 635.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 2554.430 ; gain = 635.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:16 . Memory (MB): peak = 2554.430 ; gain = 635.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:05 ; elapsed = 00:00:16 . Memory (MB): peak = 2554.430 ; gain = 635.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:05 ; elapsed = 00:00:16 . Memory (MB): peak = 2554.430 ; gain = 635.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 2554.430 ; gain = 635.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 2554.430 ; gain = 635.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 2554.430 ; gain = 635.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 2554.430 ; gain = 635.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 2554.430 ; gain = 635.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 2554.430 ; gain = 635.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |    16|
+|2     |LUT4 |   129|
+|3     |LUT5 |     2|
+|4     |FDCE |    16|
++------+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 2554.430 ; gain = 635.871
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:04 ; elapsed = 00:00:17 . Memory (MB): peak = 2554.430 ; gain = 523.211
+Synthesis Optimization Complete : Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 2554.430 ; gain = 635.871
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2554.430 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2554.430 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 4b16c43f
+INFO: [Common 17-83] Releasing license: Synthesis
+66 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:31 . Memory (MB): peak = 2554.430 ; gain = 1013.516
+INFO: [Common 17-1381] The checkpoint 'C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.runs/design_1_Test_CRO_0_0_synth_1/design_1_Test_CRO_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_Test_CRO_0_0, cache-ID = 9d10150ab632829c
+INFO: [Common 17-1381] The checkpoint 'C:/Users/40227910/16_bit_puf_new_balancing/16_bit_puf_new_balancing.runs/design_1_Test_CRO_0_0_synth_1/design_1_Test_CRO_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_Test_CRO_0_0_utilization_synth.rpt -pb design_1_Test_CRO_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 26 16:13:24 2024...

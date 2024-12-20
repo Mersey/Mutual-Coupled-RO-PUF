@@ -1,0 +1,20 @@
+verilog xil_defaultlib --include "C:/Xilinx/Vivado/2023.1/data/xilinx_vip/include" --include "../../../../16_bit_puf_new_balancing.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../16_bit_puf_new_balancing.gen/sources_1/bd/design_1/ipshared/aed8/hdl" \
+"../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
+"../../../bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" \
+"../../../bd/design_1/ip/design_1_Comparator_v2_0_0/sim/design_1_Comparator_v2_0_0.v" \
+"../../../bd/design_1/ip/design_1_Comparator_v2_1_0_0/sim/design_1_Comparator_v2_1_0_0.v" \
+"../../../bd/design_1/ip/design_1_Comparator_v2_2_0_0/sim/design_1_Comparator_v2_2_0_0.v" \
+"../../../bd/design_1/ip/design_1_XOR_3bit_0_0/sim/design_1_XOR_3bit_0_0.v" \
+"../../../bd/design_1/ip/design_1_Counter_latch_0_0/sim/design_1_Counter_latch_0_0.v" \
+"../../../bd/design_1/ip/design_1_Test_CRO_1_0_0/sim/design_1_Test_CRO_1_0_0.v" \
+"../../../bd/design_1/ip/design_1_Test_CRO_0_0/sim/design_1_Test_CRO_0_0.v" \
+"../../../bd/design_1/ip/design_1_PUF_Controller_0_0/sim/design_1_PUF_Controller_0_0.v" \
+"../../../bd/design_1/ip/design_1_util_vector_logic_0_0_1/sim/design_1_util_vector_logic_0_0.v" \
+"../../../bd/design_1/ip/design_1_XOR_64bit_0_0/sim/design_1_XOR_64bit_0_0.v" \
+"../../../bd/design_1/sim/design_1.v" \
+"../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
